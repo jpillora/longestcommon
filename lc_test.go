@@ -20,23 +20,23 @@ func doTest(t *testing.T, lines, pre, suf string) {
 	}
 }
 
-func Test1(t *testing.T) {
+func TestXFix1(t *testing.T) {
 	doTest(t, ``, "", "")
 }
 
-func Test2(t *testing.T) {
+func TestXFix2(t *testing.T) {
 	doTest(t, `single`, "single", "single")
 }
 
-func Test3(t *testing.T) {
+func TestXFix3(t *testing.T) {
 	doTest(t, "single\ndouble", "", "le")
 }
 
-func Test4(t *testing.T) {
+func TestXFix4(t *testing.T) {
 	doTest(t, "flower\nflow\nfleet", "fl", "")
 }
 
-func Test5(t *testing.T) {
+func TestXFix5(t *testing.T) {
 	doTest(t, `My Awesome Album - 01.mp3
 My Awesome Album - 11.mp3
 My Awesome Album - 03.mp3
@@ -76,4 +76,36 @@ My Awesome Album - 36.mp3
 My Awesome Album - 37.mp3
 My Awesome Album - 38.mp3
 My Awesome Album - 39.mp3`, "My Awesome Album - ", ".mp3")
+}
+
+func TestTrimPrefix1(t *testing.T) {
+	strs := []string{"flower", "flow", "fleet"}
+	TrimPrefix(strs)
+	if strs[0] != "ower" {
+		t.Fatalf("fail: expected result string to be 'ower', got '%s'", strs[0])
+	}
+}
+
+func TestTrimPrefix2(t *testing.T) {
+	strs := []string{"flower", "tree"}
+	TrimPrefix(strs) //no common prefix
+	if strs[0] != "flower" {
+		t.Fatalf("fail: expected result string to be 'flower', got '%s'", strs[0])
+	}
+}
+
+func TestTrimSuffix1(t *testing.T) {
+	strs := []string{"flower", "power"}
+	TrimSuffix(strs)
+	if strs[0] != "fl" {
+		t.Fatalf("fail: expected result string to be 'fl', got '%s'", strs[0])
+	}
+}
+
+func TestTrimSuffix2(t *testing.T) {
+	strs := []string{"flower", "tree"}
+	TrimSuffix(strs) //no common suffix
+	if strs[0] != "flower" {
+		t.Fatalf("fail: expected result string to be 'flower', got '%s'", strs[0])
+	}
 }
