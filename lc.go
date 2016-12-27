@@ -1,12 +1,12 @@
-package lcfix
+package longestcommon
 
-//LongestCommonPrefix of the provided strings
-func LongestCommonPrefix(strs []string) string {
+//Prefix returns the longest common prefix of the provided strings
+func Prefix(strs []string) string {
 	return longestCommonXfix(strs, true)
 }
 
-//LongestCommonSuffix of the provided strings
-func LongestCommonSuffix(strs []string) string {
+//Suffix returns the longest common suffix of the provided strings
+func Suffix(strs []string) string {
 	return longestCommonXfix(strs, false)
 }
 

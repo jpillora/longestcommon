@@ -1,20 +1,25 @@
-# lcfix
+# longestcommon
 
 Find the longest common prefix/suffix across of list of strings in Go (Golang). Runs in `O(n)`.
 
-[![GoDoc](https://godoc.org/github.com/jpillora/lcfix?status.svg)](https://godoc.org/github.com/jpillora/lcfix) [![Circle CI](https://circleci.com/gh/jpillora/lcfix.svg?style=shield)](https://circleci.com/gh/jpillora/lcfix)
+[![GoDoc](https://godoc.org/github.com/jpillora/longestcommon?status.svg)](https://godoc.org/github.com/jpillora/longestcommon) [![Circle CI](https://circleci.com/gh/jpillora/longestcommon.svg?style=shield)](https://circleci.com/gh/jpillora/longestcommon)
 
 ### Install
 
 ```
-$ go get -v github.com/jpillora/lcfix
+$ go get -v github.com/jpillora/longestcommon
 ```
 
 ### Usage
 
 ``` go
-LongestCommonPrefix([]string{"flower","flow","fleet"}) //"fl"
+longestcommon.Prefix([]string{"flower","flow","fleet"}) //"fl"
+longestcommon.Suffix([]string{"flower","power","lower"}) //"ower"
 ```
+
+### TODO
+
+* Include [Longest Common Subsequence](https://github.com/jpillora/lcs) with its TODOs completed
 
 #### MIT License
 

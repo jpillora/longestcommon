@@ -1,4 +1,4 @@
-package lcfix
+package longestcommon
 
 import (
 	"strings"
@@ -10,11 +10,11 @@ func doTest(t *testing.T, lines, pre, suf string) {
 	if lines != "" {
 		strs = strings.Split(lines, "\n")
 	}
-	p := LongestCommonPrefix(strs)
+	p := Prefix(strs)
 	if p != pre {
 		t.Fatalf("fail: expected prefix '%s', got '%s'", pre, p)
 	}
-	s := LongestCommonSuffix(strs)
+	s := Suffix(strs)
 	if s != suf {
 		t.Fatalf("fail: expected suffix '%s', got '%s'", suf, s)
 	}
