@@ -66,6 +66,9 @@ func longestCommonXfix(strs []string, pre bool) string {
 					break
 				}
 			}
+			if len(xfix) > maxl {
+				xfix = xfix[:maxl]
+			}
 		} else {
 			//suffix, iternate right to left
 			for i := 0; i < maxl; i++ {
@@ -75,6 +78,9 @@ func longestCommonXfix(strs []string, pre bool) string {
 					xfix = xfix[xi+1:]
 					break
 				}
+			}
+			if len(xfix) > maxl {
+				xfix = xfix[len(xfix)-maxl:]
 			}
 		}
 	}

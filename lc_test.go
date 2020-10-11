@@ -78,6 +78,14 @@ My Awesome Album - 38.mp3
 My Awesome Album - 39.mp3`, "My Awesome Album - ", ".mp3")
 }
 
+func TestExactElementBugSuffix(t *testing.T) {
+	doTest(t, "red.flower.\nflower.", "", "flower.")
+}
+
+func TestExactElementBugPrefix(t *testing.T) {
+	doTest(t, "blue.car\nblue.", "blue.", "")
+}
+
 func TestTrimPrefix1(t *testing.T) {
 	strs := []string{"flower", "flow", "fleet"}
 	TrimPrefix(strs)
